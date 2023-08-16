@@ -4,7 +4,7 @@
 
 1) Clonar repositorio:
 
-        $ git clone https://github.com/frangr94/qxm-dashboards.git
+        $ git clone https://github.com/frangr94/qxm-v2.git
 
 2) Instalar dependencias en el entorno virtual deseado:
         
