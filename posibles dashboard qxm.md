@@ -1,4 +1,5 @@
-﻿<a name="br1"></a> 
+﻿<a name="br1"></a>
+---
 
 ESTUVE SIGUIENDO LA VIDA DE UN PROJECT Y ME SURGEN ALGUNAS
 
@@ -26,7 +27,8 @@ En daily\_analytics aparece una columna “finish”, que sería?
 
 
 
-<a name="br2"></a> 
+<a name="br2"></a>
+---
 
 OTRAS CONSULTAS PARA HACER:
 
@@ -49,6 +51,7 @@ professional\_polls)
 
 
 <a name="br3"></a> 
+---
 
 Posibles metricas y KPIs
 
@@ -69,6 +72,7 @@ realice el servicio)
 
 
 <a name="br4"></a> 
+---
 
 PARTNERS
 
@@ -89,6 +93,7 @@ CONTRACT
 
 
 <a name="br5"></a> 
+---
 
 POSIBLES GRÁFICOS PARA DASHBOARD
 
@@ -105,6 +110,7 @@ Este tablero puede estar mas orientado a Administradores que a usuarios
 
 
 <a name="br6"></a> 
+---
 
 POSIBLES GRÁFICOS PARA DASHBOARD
 
@@ -131,6 +137,7 @@ CONTRACTS?
 
 
 <a name="br7"></a> 
+---
 
 POSIBLES GRÁFICOS PARA DASHBOARD
 
@@ -155,6 +162,7 @@ porcentaje de profesionales cuenta con monotributo para la categoría filtrada)
 
 
 <a name="br8"></a> 
+---
 
 POSIBLES GRÁFICOS PARA DASHBOARD
 
