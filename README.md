@@ -8,7 +8,7 @@
 
 2) Instalar dependencias en el entorno virtual deseado:
         
-        $ cd qxm-dashboards
+        $ cd qxm-v2
         $ pip install -r requirements.txt
 
 3) Abrir editor de MYSQL y ejecutar _vistas_script.sql_ (solo la primera vez)
