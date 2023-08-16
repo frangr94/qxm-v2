@@ -166,8 +166,8 @@ with left:
         y=total_prices["total"],
         marker=dict(color='rgba(58, 71, 80, 0.6)',
         line=dict(color='rgba(58, 71, 80, 1.0)', width=1)),
-        name='Valores',
-        width=600
+        name='Valores'
+        
         ))
 
 # Agregar título al gráfico
