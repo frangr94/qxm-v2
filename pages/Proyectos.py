@@ -114,6 +114,8 @@ with left:
                 labels={'id':'Total de proyectos',
                         'year':'Año'}
                 )
+    
+    fig.update_xaxes(type='category')
 
     st.plotly_chart(fig)
 
@@ -139,6 +141,9 @@ with right:
         yaxis_title="Contratos y proyectos por año",
         height=600,
         width=600)
+    
+    fig.update_xaxes(type='category')
+
     st.plotly_chart(fig)
 
 payments['year'] = pd.DatetimeIndex(payments['created_at']).year
