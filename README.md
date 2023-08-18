@@ -27,3 +27,18 @@
 5) Ejecutar Home.py:
         
         $ streamlit run Home.py
+
+6) Opcional: si se desea cambiar colores de acento, fondo, etc se puede acceder al archivo _config.toml_. Por ejemplo:
+
+        $ cd .streamlit/config.toml
+
+        [theme]
+        primaryColor="#F63366"
+        backgroundColor="#FFFFFF"
+        secondaryBackgroundColor="#F0F2F6"
+        textColor="#262730"
+        font="sans serif"
+
+        # Nota: utiliza hexcolor
+
+
