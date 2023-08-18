@@ -104,7 +104,7 @@ left, right = st.columns(2)
 with left:
     # total de proyectos
     yearly_projects=projects['id'].groupby(projects['year']).count().reset_index()
-    fig = px.bar(data_frame=yearly_projects,
+    fig = px.bar(data_frame=yearly_projects,    
                 x='year',
                 y='id',
                 orientation='v',
