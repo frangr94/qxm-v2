@@ -23,7 +23,7 @@ with b:
     st.image('src/qxm_logo.png', use_column_width='always')
 
 
-st.write('''## Graficos varios Seba''')
+st.write('''## Otras métricas y graficos''')
 
 # conexion a mysql
 cursor = mysql_connection()
