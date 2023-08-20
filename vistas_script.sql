@@ -63,7 +63,24 @@ FROM projects p
 JOIN categories c ON p.category_id = c.id
 LEFT JOIN contracts c2 ON p.id = c2.project_id;
    
-   
+
+CREATE VIEW Informacion_tablas_view AS
+SELECT
+    t.table_name AS Tabla,
+    c.column_name AS Columna,
+    c.data_type AS Tipo,
+    IFNULL(kcu.constraint_name, 'No') AS Es_Index,
+    kcu.ordinal_position AS Orden_Index,
+    GROUP_CONCAT(DISTINCT kcu2.referenced_table_name) AS Tablas_Vinculadas
+FROM
+    information_schema.tables t
+    INNER JOIN information_schema.columns c ON t.table_name = c.table_name
+    LEFT JOIN information_schema.key_column_usage kcu ON t.table_name = kcu.table_name AND c.column_name = kcu.column_name
+    LEFT JOIN information_schema.key_column_usage kcu2 ON kcu.referenced_table_name = kcu2.table_name
+WHERE
+    t.table_schema = 'qxm_dump'
+GROUP BY
+    t.table_name, c.column_name, c.data_type, Es_Index, Orden_Index;
   
 	
 	
