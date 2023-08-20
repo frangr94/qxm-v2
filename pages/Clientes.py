@@ -94,16 +94,20 @@ with left:
 
     layout = go.Layout(
         title='Cantidad de Servicios Contratados',
-        xaxis=dict(title='n_trabajos'),
-        yaxis=dict(title='categoría'),
+        xaxis=dict(title='Trabajos realizados'),
+        yaxis=dict(title='Categoría'),
         width=800,
-        height=600
+        height=600,
     )
     fig = go.Figure(data=go.Bar(
             y=contracts_per_category["title"],
             x=contracts_per_category["id"],
             orientation='h'
             ),layout=layout)
+    
+    fig.update_layout(
+        font_color = 'red'
+    )
         
         # plotear
     st.plotly_chart(fig)
@@ -149,8 +153,8 @@ with right:
     
     fig.update_layout(
         title="Precio Promedio por categoría",
-        xaxis_title="categoría",
-        yaxis_title="",
+        xaxis_title="Categoría",
+        yaxis_title="Precio",
         height=600,
         width=600
         )
@@ -174,7 +178,7 @@ with left:
     fig.update_layout(
         title="Total contratado por categoría",
         xaxis_title="Categoría",
-        yaxis_title="",
+        yaxis_title="Total contratado en $",
         height=600,
         width=600)
     

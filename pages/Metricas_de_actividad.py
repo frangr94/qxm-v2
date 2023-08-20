@@ -70,7 +70,9 @@ with left:
                     'budgets':'Cotizaciones',
                 },
                 height=600,
-                width=600)
+                width=600,
+                )
+    
     # plotear
     st.plotly_chart(fig)
 
@@ -87,6 +89,7 @@ with right:
                 },
                 height=600,
                 width=600)
+
     # plotear
     st.plotly_chart(fig)
 

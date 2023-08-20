@@ -26,6 +26,8 @@ cursor = mysql_connection()
 
 profesionals_data = mysql_query_df('profesionals_data',cursor)
 insurance_clients = mysql_query_df('insurance_clients',cursor)
+profesionals_data['bill']=profesionals_data['bill'].replace(0,'No')
+profesionals_data['bill']=profesionals_data['bill'].replace(1,'Si')
 
 # --- FILTROS ---
 
@@ -94,6 +96,11 @@ left, right = st.columns(2)
 with left:
     # -- BANCARIZADO SI NO --
     bank = profesionals_data['id'].groupby(profesionals_data['bank_account']).count().reset_index()
+
+    # reemplazar binarios
+    bank['bank_account']=bank['bank_account'].replace(0,'No')
+    bank['bank_account']=bank['bank_account'].replace(1,'Si')
+
     fig = px.pie(data_frame=bank,
                 names='bank_account',
                 values='id',
@@ -101,12 +108,15 @@ with left:
                 labels={'id':'Cantidad',
                         'bank_account':'Bancarizados'},
                 width=600,
-                height=400)
+                height=600)
     st.plotly_chart(fig)
 
 with right:
 # -- POSEE SEGURO SI O NO --
     insurance = profesionals_data['id'].groupby(profesionals_data['insurance']).count().reset_index()
+    insurance['insurance']=insurance['insurance'].replace(0,'No')
+    insurance['insurance']=insurance['insurance'].replace(1,'Si')
+
     fig = px.pie(data_frame=insurance,
                 names='insurance',
                 values='id',
@@ -114,7 +124,7 @@ with right:
                 labels={'id':'Cantidad',
                         'insurance':'Asegurados'},
                         width=600,
-                        height=400)
+                        height=600)
     st.plotly_chart(fig)
 
  #trabajadores por rubro(X)

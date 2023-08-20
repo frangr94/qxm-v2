@@ -104,14 +104,18 @@ left, right = st.columns(2)
 with left:
     # total de proyectos
     yearly_projects=projects['id'].groupby(projects['year']).count().reset_index()
-    fig = px.bar(data_frame=projects,
-                x=yearly_projects['year'],
-                y=yearly_projects['id'],
+    fig = px.bar(data_frame=yearly_projects,    
+                x='year',
+                y='id',
                 orientation='v',
                 title='Total de proyectos',
                 width=600,
-                height=600
+                height=600,
+                labels={'id':'Total de proyectos',
+                        'year':'Año'}
                 )
+    
+    fig.update_xaxes(type='category')
 
     st.plotly_chart(fig)
 
@@ -134,9 +138,12 @@ with right:
     fig.update_layout(
         title="Proyectos y contratos por año",
         xaxis_title="Año",
-        yaxis_title="",
+        yaxis_title="Contratos y proyectos por año",
         height=600,
         width=600)
+    
+    fig.update_xaxes(type='category')
+
     st.plotly_chart(fig)
 
 payments['year'] = pd.DatetimeIndex(payments['created_at']).year
@@ -147,7 +154,9 @@ with left:
                 y='uuid',
                 height=600,
                 width=600,
-                title='Pagos realizados por año')
+                title='Pagos realizados por año',
+                labels={'uuid':'Pagos realizados',
+                'year':'Año'})
     st.plotly_chart(fig)
 
 with right:
@@ -156,5 +165,7 @@ with right:
                 y='price',
                 height=600,
                 width=600,
-                title='Total en $ de pagos realizados')
+                title='Total en $ de pagos realizados',
+                labels={'year':'Año',
+                'price':'Total de pagos realizados en $'})
     st.plotly_chart(fig)
